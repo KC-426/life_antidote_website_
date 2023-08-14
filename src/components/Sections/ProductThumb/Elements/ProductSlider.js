@@ -10,8 +10,8 @@ export default function ProductSlider({ data, sliderSettings }) {
         {data.map((data, index) => (
           <div key={index} className="product-slide__item">
             {/* <Product data={p} /> */}
-            <div className={`product ${classNames(className)}`}>
-              <div className="product-type">{renderType()}</div>
+            <div className={`product `}>
+              {/* <div className="product-type">{renderType()}</div> */}
               <div className="product__thumb">
                 <Link
                   href={`${process.env.PUBLIC_URL}/shop/category/product-category`}
@@ -32,7 +32,8 @@ export default function ProductSlider({ data, sliderSettings }) {
                         }}
                       />
                     ))}
-                    // {/* {otherColor && (
+                    //{" "}
+                    {/* {otherColor && (
                     //   <img src={data?.product_images[0]?.image_url} />
                     // )} */}
                   </a>
