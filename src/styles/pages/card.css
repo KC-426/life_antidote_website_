@@ -1,0 +1,35 @@
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px; 
+  }
+  
+  .product-card {
+    flex: 1;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+
+  }
+  
+  .product-card img {
+    max-width: 300px;
+    height: auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .product-card {
+      flex: 0 0 calc(50% - 20px);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .product-card {
+      flex: 0 0 calc(100% - 20px);
+    }
+  }
+  

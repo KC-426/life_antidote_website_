@@ -12,7 +12,8 @@ import {
   BreadcrumbItem,
 } from "../../../components/Other/Breadcrumb";
 import ProductSlideTwo from "../../../components/Sections/ProductThumb/ProductSlide/ProductSlideTwo";
-import Button from "../../../Control/Button";
+// import TeamCard from "../../../../src/components/Sections/Team/Elements/TeamCard"
+// import Card from "../../../../src/components/Control/Button"
 
 // export default function () {
 //   const router = useRouter();
@@ -128,14 +129,14 @@ export default function () {
         <BreadcrumbItem name="Home" />
         <BreadcrumbItem name="Shop" />
       </Breadcrumb>
-      <div>
+      <div className="product-card-container">
         {foundProducts.map((category) => (
-          <div key={category._id}>
-            <div>{category?.product_name}</div>
+          <div key={category._id} className="product-card">
             <img
               src={category?.product_images[0]?.image_url}
               alt={category.main_category_name}
             />
+            <div>{category?.product_name}</div>
           </div>
         ))}
       </div>
