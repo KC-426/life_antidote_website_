@@ -22,17 +22,23 @@ export default function homepage1() {
 
   const [data, setData] = useState([]);
   const [product, setProduct] = useState([]);
+  const [category, setCategory] = useState([]);
 
   const fetchData = async () => {
     try {
       const url = `${baseUrl}/api/get/all/banners`;
-
       const res = await axios.get(url, { withCredentials: true });
       setData(res.data);
 
       const url_pro = `${baseUrl}/api/all/products`;
       const res_pro = await axios.get(url_pro, { withCredentials: true });
       setProduct(res_pro.data.allProducts);
+
+      const url_prime = `${baseUrl}/api/get/all/category`;
+      console.log(url_prime);
+      const res_prime = await axios.get(url_prime, { withCredentials: true });
+      console.log(res_prime);
+      setCategory(res_prime.data.all_categories);
     } catch (err) {
       console.log(err);
     }
@@ -42,13 +48,13 @@ export default function homepage1() {
     fetchData();
   }, []);
   console.log(data);
-
+  console.log(category);
   return (
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
       <SliderTwo data={data} className="-style-1" showDots />
       {/* <IntroductionOne data={introductionOneData} /> */}
       {/* <IntroductionTwo data={introductionTwoData} /> */}
-      <ProductSlideOne data={productSlideOneData} />
+      <ProductSlideOne data={category} />
 
       <div className="container">
         <ShopProducts

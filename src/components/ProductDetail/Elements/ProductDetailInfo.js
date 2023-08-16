@@ -13,6 +13,7 @@ import Rate from "../../Other/Rate";
 import { checkProductInWishList } from "../../../common/shopUtils";
 import axios from "axios";
 import { baseUrl } from "../../../../config";
+import Countdown, { calcTimeDelta } from "react-countdown";
 
 export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,11 +53,24 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
   const [name, setName] = useState("");
   const [phNum, setPhNum] = useState("");
   const [message, setMessage] = useState("");
-  // const [d, setData] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [medicine, setMedicine] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(name, phNum, message, data?.productID);
+    console.log(
+      name,
+      phNum,
+      message,
+      medicine,
+      email,
+      country,
+      data?.productID
+    );
+
+    setShowPopup(true);
 
     try {
       const url = `${baseUrl}/api/add/enquiry`;
@@ -66,6 +80,9 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
           name: name,
           phone_no: phNum,
           message: message,
+          medicine: medicine,
+          email: email,
+          country: country,
           product_detail: data?.productID,
         },
         { withCredentials: true }
@@ -160,40 +177,96 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
               <h2>Enquiry Form</h2>
               <form onSubmit={handleSubmit}>
                 <div className="formData">
-                <label htmlFor="name" className="name">Name:</label>
-                <input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                /><br></br>
-
-                <label htmlFor="phone" className="phone">Phone Number:</label>
-                <input
-                  value={phNum}
-                  onChange={(e) => setPhNum(e.target.value)}
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                /> <br></br>
-
-                <label htmlFor="message"  className="message">Message:</label>
-                <textarea
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                />
+                  <label htmlFor="medicine" className="medicine">
+                    Medicine:
+                  </label>
+                  <input
+                    type="text"
+                    value={medicine}
+                    onChange={(e) => setMedicine(e.target.value)}
+                    id="medicine"
+                    required
+                  />
+                  <label htmlFor="name" className="name">
+                    Your Name:
+                  </label>
+                  <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                  <br></br>
+                  <label htmlFor="email" className="email">
+                    Your Email:
+                  </label>
+                  <input
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    id="email"
+                    name="email"
+                    required
+                  ></input>
+                  <br></br>
+                  <label htmlFor="phone" className="phone">
+                    Your Phone:
+                  </label>
+                  <input
+                    value={phNum}
+                    onChange={(e) => setPhNum(e.target.value)}
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                  />
+                  <br></br>
+                  <label htmlFor="country" className="country">
+                    Your Country:
+                  </label>
+                  <input
+                    type="text"
+                    id="country"
+                    value={country}
+                    onChange={(e) => setCountry(e.target.value)}
+                    name="country"
+                    required
+                  ></input>
+                  <br></br>
+                  <label htmlFor="message" className="message">
+                    Message:
+                  </label>
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                  />
+                  <br></br>
                 </div>
                 <br></br>
 
-                <button className="button" type="submit">Submit</button>
+                <button className="button" type="submit" target="">
+                  Submit
+                </button>
               </form>
+              {showPopup && (
+                <div className="popup">
+                  <div className="popup-content">
+                    <h2>Thank You for Submission!</h2>
+                    <button
+                      className="close"
+                      onClick={() => setShowPopup(false)}
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}

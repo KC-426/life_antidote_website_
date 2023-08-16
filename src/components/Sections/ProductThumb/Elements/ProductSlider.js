@@ -14,25 +14,24 @@ export default function ProductSlider({ data, sliderSettings }) {
               {/* <div className="product-type">{renderType()}</div> */}
               <div className="product__thumb">
                 <Link
-                  href={`${process.env.PUBLIC_URL}/shop/category/product-category`}
+                  href={`${process.env.PUBLIC_URL}/shop/category/${data._id}`}
                   // href={`#`}
-                  as={`${process.env.PUBLIC_URL}/shop/category/product-category/${data._id}`}
+                  as={`${process.env.PUBLIC_URL}/shop/category/${data._id}`}
                   // as={`#`}
                 >
                   <a className="product__thumb__image">
-                    {data?.product_images?.map((img, index) => (
-                      <img
-                        key={index}
-                        src={data?.main_category_image?.image_url}
-                        alt="Product image"
-                        style={{
-                          width: "100%",
-                          height: "160px",
-                          objectFit: "contain",
-                        }}
-                      />
-                    ))}
-                    //{" "}
+                    {/* {data?.product_images?.map((img, index) => ( */}
+                    <img
+                      key={index}
+                      src={data?.main_category_image?.image_url}
+                      alt="Product image"
+                      style={{
+                        width: "100%",
+                        height: "160px",
+                        objectFit: "contain",
+                      }}
+                    />
+                    {/* ))} */}{" "}
                     {/* {otherColor && (
                     //   <img src={data?.product_images[0]?.image_url} />
                     // )} */}

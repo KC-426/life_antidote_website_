@@ -13,7 +13,7 @@ body{
 
 }
 .formData{
-    margin: 2rem;
+    margin: 1rem;
 }
 
 h2{
@@ -22,12 +22,12 @@ h2{
     text-align: center;
 }
 
-.name, .message, .phone{
+.name, .message, .phone, .medicine, .email, .country{
     line-height: 40px;
 }
 
 .popup-content {
-    width: 60%;
+    width: 55%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,7 +40,7 @@ h2{
 
 input, textarea{
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
 
@@ -54,7 +54,7 @@ input, textarea{
     cursor: pointer;
 }
 
-.button {
+.button, .close{
     display: inline-block;
     padding: 0.8rem 1.2rem;
     font-size: 1rem;

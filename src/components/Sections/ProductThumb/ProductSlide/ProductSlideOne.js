@@ -10,22 +10,22 @@ import React, { useState, useEffect } from "react";
 export default function ProductSlideOne({ data }) {
   const [minData, setMainData] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      // const url = `${process.env.PUBLIC_URL + "/api/get/all/category"}`;
-      const url = "http://localhost:5000/api/get/all/category";
-      const res = await axios.get(url);
+  // const fetchData = async () => {
+  //   try {
+  //     // const url = `${process.env.PUBLIC_URL + "/api/get/all/category"}`;
+  //     const url = "http://localhost:5000/api/get/all/category";
+  //     const res = await axios.get(url);
 
-      console.log("sorce", res.data.all_categories);
-      setMainData(res.data.all_categories);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     console.log("sorce", res.data.all_categories);
+  //     setMainData(res.data.all_categories);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   
   const settings = {
     speed: 500,
@@ -65,20 +65,20 @@ export default function ProductSlideOne({ data }) {
     <div className="product-slide">
       <div className="container">
         <SectionTitleOne align="center" spaceBottom="50px">
-          Other Categories
+          Our Categories
         </SectionTitleOne>
 
         <ProductSlider
-          data={minData}
+          data={data}
           sliderSettings={settings}
         />
         <div className="text-center">
-          <Button
+          {/* <Button
             action={process.env.PUBLIC_URL + "/api/get/all/category"}
             color="transparent"
             className="-underline"
             // content="View all product"
-          />
+          /> */}
         </div>
       </div>
     </div>
