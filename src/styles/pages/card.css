@@ -4,6 +4,11 @@
     margin: -20px; 
   }
   
+.title{
+ line-height: 2.5rem;
+ font-size: 1.2rem;
+}
+
   .product-card {
     flex: 1;
     margin: 10px;

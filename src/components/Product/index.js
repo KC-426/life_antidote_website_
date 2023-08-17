@@ -22,6 +22,7 @@ import {
 import AddToCart from "../Control/AddToCart";
 import { baseUrl } from "../../../config";
 
+
 function Product({ data, type, className }) {
   const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cartReducer);
@@ -80,6 +81,8 @@ function Product({ data, type, className }) {
 
   console.log(data, baseUrl);
 
+ 
+
   return (
     <>
       {!type || type === "grid" ? (
@@ -102,7 +105,7 @@ function Product({ data, type, className }) {
                 ))}
                 {otherColor && <img src={data?.product_images[0]?.image_url} />}
               </a>
-            </Link>
+            </Link>       
             {/* <div className="product__thumb__actions">
               <div className="product-btn" data-tip data-for="cartIcon">
                 <Button
@@ -174,6 +177,8 @@ function Product({ data, type, className }) {
             >
               <a className="product-name">{data.product_name}</a>
             </Link>
+
+
             {/* <div className="product__content__footer">
               <h5 className="product-price--main">
                 {data.discount
@@ -202,6 +207,8 @@ function Product({ data, type, className }) {
                 </div>
               )}
             </div> */}
+
+
           </div>
         </div>
       ) : (
@@ -274,6 +281,8 @@ function Product({ data, type, className }) {
                 )}
               </div>
             </div>
+
+
             <div className="product-list__content__bottom">
               <p className="product-description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque

@@ -14,6 +14,11 @@ import {
 import ProductSlideTwo from "../../../components/Sections/ProductThumb/ProductSlide/ProductSlideTwo";
 // import TeamCard from "../../../../src/components/Sections/Team/Elements/TeamCard"
 // import Card from "../../../../src/components/Control/Button"
+import ReactTooltip from "react-tooltip";
+import classNames from "classnames";
+import Link from "next/link";
+import { formatCurrency } from "../../../common/utils";
+import { addToCart } from "../../../redux/actions/cartActions";
 
 // export default function () {
 //   const router = useRouter();
@@ -101,8 +106,9 @@ import ProductSlideTwo from "../../../components/Sections/ProductThumb/ProductSl
 //     )
 // }
 
-export default function () {
+export default function (data) {
   const [foundProducts, setFoundProducts] = useState([]);
+  const [otherColor, setOtherColor] = useState();
 
   const router = useRouter();
   const { slug } = router.query;
@@ -125,11 +131,14 @@ export default function () {
 
   return (
     <LayoutFour title={"Shop"}>
+  
       <Breadcrumb title="Product Detail">
+      <div className="title">
         <BreadcrumbItem name="Home" />
         <BreadcrumbItem name="Shop" />
+        </div>
       </Breadcrumb>
-      <div className="product-card-container">
+     <div className="product-card-container">
         {foundProducts.map((category) => (
           <div key={category._id} className="product-card">
             <img
@@ -139,7 +148,7 @@ export default function () {
             <div>{category?.product_name}</div>
           </div>
         ))}
-      </div>
+              </div>
     </LayoutFour>
   );
 }

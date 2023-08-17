@@ -16,6 +16,10 @@ import { useState } from "react";
 import { baseUrl } from "../../config";
 import axios from "axios";
 import ShopProducts from "../components/Shop/ShopProducts";
+import ProductSlider from "../components/Sections/ProductThumb/Elements/ProductSlider";
+import { PrevArrow, NextArrow } from "../components/Other/SliderArrow";
+import SectionTitleOne from "../components/Sections/SectionTitle/SectionTitleOne";
+import Slider from "react-slick";
 
 export default function homepage1() {
   console.log(sliderData);
@@ -49,6 +53,80 @@ export default function homepage1() {
   }, []);
   console.log(data);
   console.log(category);
+
+  const settings = {
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    className: "product-slide__wrapper",
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1170,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
+  const reviewObj  = [
+    {
+      _id: "1",
+      title: "video_1",
+      url: "https://www.youtube.com/embed/4LzEZYvyJVg"
+    },
+    {
+      _id: "2",
+      title: "video_2",
+      url: "https://www.youtube.com/embed/naNyQAn08qo"
+    },
+    {
+      _id: "3",
+      title: "video_3",
+      url: "https://www.youtube.com/embed/62UeowWFW6A"
+    },
+    {
+      _id: "4",
+      title: "video_4",
+      url: "https://www.youtube.com/embed/5W-QigyVOvI"
+    },
+     {
+      _id: "5",
+      title: "video_5",
+      url: "https://www.youtube.com/embed/lBzVYI_gTQI"
+    },
+    {
+      _id: "6",
+      title: "video_6",
+      url: "https://www.youtube.com/embed/10jkhbZv26M"
+    },
+    {
+      _id: "7",
+      title: "video_7",
+      url: "https://youtu.be/TTpuv3Gsq9I"
+    },   
+  ]
+
   return (
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
       <SliderTwo data={data} className="-style-1" showDots />
@@ -64,6 +142,36 @@ export default function homepage1() {
           data={product.slice(0, 12)}
         />
       </div>
+
+      <div className="product-slide">
+      <div className="container">
+        <SectionTitleOne align="center" spaceBottom="50px">
+          Our Reviews
+        </SectionTitleOne>
+
+        <div className="product-slider">
+      <Slider {...settings}>
+
+        {reviewObj.map((data, index) => (
+      <div key= {data._id}>
+      
+      <iframe
+      title={data.title}
+      width="300"
+      height="250"
+      src={data.url}
+      frameBorder="0"
+      allowFullScreen
+    ></iframe>
+
+      <h5>{data.title}</h5>          
+        </div>
+        ))}
+      </Slider>
+    </div>
+      </div>
+    </div>
+
       {/* <TestimonialOne data={testimonialOneData} /> */}
       {/* <TeamOne data={teamOneData} /> */}
       {/* <CTAOne /> */}

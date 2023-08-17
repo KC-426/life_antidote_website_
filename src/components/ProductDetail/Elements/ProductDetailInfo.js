@@ -250,7 +250,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
                 </div>
                 <br></br>
 
-                <button className="button" type="submit" target="">
+                <button className="button" type="submit">
                   Submit
                 </button>
               </form>
