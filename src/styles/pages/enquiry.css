@@ -71,14 +71,12 @@ input, textarea{
   }
   
   .button:hover {
-    background-color: black; /* Darken the color on hover */
+    background-color: black; 
   }
   
   .button:active {
-    transform: scale(0.98); /* Slight scale down on click for visual feedback */
+    transform: scale(0.98); 
   }
-  
-  /* Optional: Additional button styles for different states */
   
   .button.outline {
     background-color: transparent;
