@@ -18,7 +18,15 @@ import ReactTooltip from "react-tooltip";
 import classNames from "classnames";
 import Link from "next/link";
 import { formatCurrency } from "../../../common/utils";
-import { addToCart } from "../../../redux/actions/cartActions";
+import Rate from "../../../components/Other/Rate";
+// import { addToCart } from "../../../redux/actions/cartActions";
+import AddToCart from "../../../components/Control/AddToCart"
+import {
+  checkProductInWishList,
+  checkProductInCart,
+} from "../../../common/shopUtils";
+import { useSelector, useDispatch } from "react-redux";
+import Button from "../../../components/Control/Button";
 
 // export default function () {
 //   const router = useRouter();
@@ -109,6 +117,8 @@ import { addToCart } from "../../../redux/actions/cartActions";
 export default function (data) {
   const [foundProducts, setFoundProducts] = useState([]);
   const [otherColor, setOtherColor] = useState();
+  const cartState = useSelector((state) => state.cartReducer);
+  const wishlistData = useSelector((state) => state.wishlistReducer);
 
   const router = useRouter();
   const { slug } = router.query;
@@ -131,24 +141,36 @@ export default function (data) {
 
   return (
     <LayoutFour title={"Shop"}>
-  
       <Breadcrumb title="Product Detail">
-      <div className="title">
-        <BreadcrumbItem name="Home" />
-        <BreadcrumbItem name="Shop" />
+        <div className="title">
+          <BreadcrumbItem name="Home" />
+          <BreadcrumbItem name="Shop" />
         </div>
       </Breadcrumb>
-     <div className="product-card-container">
-        {foundProducts.map((category) => (
-          <div key={category._id} className="product-card">
-            <img
-              src={category?.product_images[0]?.image_url}
-              alt={category.main_category_name}
-            />
-            <div>{category?.product_name}</div>
-          </div>
-        ))}
+      <div className="product-card-container">
+        <div className="row">
+          {foundProducts.map((category) => (
+            <div key={category._id} className="col-md-3">
+              <div className="product-card">
+                <Link
+                  href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
+                  as={`${process.env.PUBLIC_URL}/shop/product/${category.slug}`}
+                >
+                  <a className="product-list__thumb__image">
+                    <img
+                      src={category?.product_images[0]?.image_url}
+                      alt={category?.product_name}
+                      className="img-fluid"
+                    />
+                  </a>
+                </Link>
+                <div className="product-name">{category?.product_name}</div>
               </div>
+            </div>
+          ))}
+          
+        </div>
+      </div>
     </LayoutFour>
   );
 }

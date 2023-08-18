@@ -146,7 +146,7 @@ export default function homepage1() {
       <div className="product-slide">
       <div className="container">
         <SectionTitleOne align="center" spaceBottom="50px">
-          Our Reviews
+          Client Reviews
         </SectionTitleOne>
 
         <div className="product-slider">
@@ -155,10 +155,10 @@ export default function homepage1() {
         {reviewObj.map((data, index) => (
       <div key= {data._id}>
       
-      <iframe
+      <iframe 
       title={data.title}
-      width="300"
-      height="250"
+      width="260"
+      height="260"
       src={data.url}
       frameBorder="0"
       allowFullScreen
