@@ -107,7 +107,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
           </Link>
         </div> */}
         <h3>
-          {formatCurrency(data.price)}
+          {/* {formatCurrency(data.price)} */}
           {/* {data.discount
             ? formatCurrency(data.product_sale_price)
             : formatCurrency(data.product_sale_price)}
@@ -174,7 +174,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
               <span className="close" onClick={closeForm}>
                 &times;
               </span>
-              <h2>Enquiry Form</h2>
+              <h3>Enquiry Form</h3>
               <form onSubmit={handleSubmit}>
                 <div className="formData">
                   <label htmlFor="medicine" className="medicine">
