@@ -154,7 +154,7 @@ export default function (data) {
               <div className="product-card">
                 <Link
                   href={`${process.env.PUBLIC_URL}/shop/product/[slug]`}
-                  as={`${process.env.PUBLIC_URL}/shop/product/${category.slug}`}
+                  as={`${process.env.PUBLIC_URL}/shop/product/${category._id}`}
                 >
                   <a className="product-list__thumb__image">
                     <img

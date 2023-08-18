@@ -1,5 +1,7 @@
-h5{
-text-align: center;
+.title{
+/* text-align: center; */
+margin-top: 1.5rem;
+font-size: large;
 }
 
 iframe{

@@ -56,7 +56,7 @@ export default function homepage1() {
 
   const settings = {
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     className: "product-slide__wrapper",
     prevArrow: <PrevArrow />,
@@ -65,7 +65,7 @@ export default function homepage1() {
       {
         breakpoint: 1170,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
@@ -115,16 +115,16 @@ export default function homepage1() {
       title: "video_5",
       url: "https://www.youtube.com/embed/lBzVYI_gTQI"
     },
-    {
-      _id: "6",
-      title: "video_6",
-      url: "https://www.youtube.com/embed/10jkhbZv26M"
-    },
-    {
-      _id: "7",
-      title: "video_7",
-      url: "https://youtu.be/TTpuv3Gsq9I"
-    },   
+    // {
+    //   _id: "6",
+    //   title: "video_6",
+    //   url: "https://www.youtube.com/embed/10jkhbZv26M"
+    // },
+    // {
+    //   _id: "7",
+    //   title: "video_7",
+    //   url: "https://youtu.be/TTpuv3Gsq9I"
+    // },   
   ]
 
   return (
@@ -157,14 +157,14 @@ export default function homepage1() {
       
       <iframe 
       title={data.title}
-      width="260"
-      height="260"
+      width="320"
+      height="290"
       src={data.url}
       frameBorder="0"
       allowFullScreen
     ></iframe>
 
-      <h5>{data.title}</h5>          
+      <div className="title">{data.title}</div>          
         </div>
         ))}
       </Slider>
