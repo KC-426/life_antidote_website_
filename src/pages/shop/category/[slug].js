@@ -126,7 +126,7 @@ export default function (data) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = `http://localhost:5000/api/all/products/by/cate/${slug}`;
+        const url = `${baseUrl}/api/all/products/by/cate/${slug}`;
 
         const res = await axios.get(url, { withCredentials: true });
         console.log(res);
