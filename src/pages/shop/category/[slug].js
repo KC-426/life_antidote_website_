@@ -15,18 +15,8 @@ import ProductSlideTwo from "../../../components/Sections/ProductThumb/ProductSl
 // import TeamCard from "../../../../src/components/Sections/Team/Elements/TeamCard"
 // import Card from "../../../../src/components/Control/Button"
 import ReactTooltip from "react-tooltip";
-import classNames from "classnames";
 import Link from "next/link";
-import { formatCurrency } from "../../../common/utils";
-import Rate from "../../../components/Other/Rate";
-// import { addToCart } from "../../../redux/actions/cartActions";
-import AddToCart from "../../../components/Control/AddToCart"
-import {
-  checkProductInWishList,
-  checkProductInCart,
-} from "../../../common/shopUtils";
-import { useSelector, useDispatch } from "react-redux";
-import Button from "../../../components/Control/Button";
+
 
 // export default function () {
 //   const router = useRouter();
@@ -116,9 +106,6 @@ import Button from "../../../components/Control/Button";
 
 export default function (data) {
   const [foundProducts, setFoundProducts] = useState([]);
-  const [otherColor, setOtherColor] = useState();
-  const cartState = useSelector((state) => state.cartReducer);
-  const wishlistData = useSelector((state) => state.wishlistReducer);
 
   const router = useRouter();
   const { slug } = router.query;
