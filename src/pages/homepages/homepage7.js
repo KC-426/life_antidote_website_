@@ -9,7 +9,7 @@ const Counter = () => {
         <div className="main_container">
         <div className="no1">
             <div className="font_data">
-              <h3><FaUsers /> </h3>
+              <h1><FaUsers /> </h1>
               
             </div>
             <h1>21900+</h1> <br />
