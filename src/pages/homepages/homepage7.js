@@ -9,7 +9,7 @@ const Counter = () => {
         <div className="main_container">
         <div className="no1">
             <div className="font_data">
-              <h1><FaUsers /> </h1>
+              <h2><FaUsers /> </h2>
               
             </div>
             <h1>21900+</h1> <br />
@@ -18,7 +18,7 @@ const Counter = () => {
   
           <div className="no1">
             <div className="font_data">
-           <h1><FaShoppingBasket /></h1>
+           <h2><FaShoppingBasket /></h2>
             </div>
             <h1>326+</h1> <br />
             <p>Products</p>
@@ -26,7 +26,7 @@ const Counter = () => {
   
           <div className="no1">
             <div className="font_data">
-              <h1> <MdDiscount /></h1>
+              <h2> <MdDiscount /></h2>
             </div>
             <h1>311+</h1> <br />
             <p>Brands</p>
@@ -34,7 +34,7 @@ const Counter = () => {
   
           <div className="no1">
             <div className="font_data">
-             <h1><FaGlobeAsia /></h1>
+             <h2><FaGlobeAsia /></h2>
             </div>
             <h1>190+</h1> <br />
             <p>Countries</p>
