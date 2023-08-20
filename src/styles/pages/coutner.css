@@ -1,0 +1,30 @@
+.main_container {
+    display: flex;
+    background-color: rgb(247, 152, 128);
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    margin-left: -290px;
+    margin-right: -290px;
+    margin-bottom: 2rem;
+    padding: 0 20px; 
+  }
+  
+  .no1 {
+    text-align: center;
+    width: 25%;
+  }
+  
+  .font_data {
+    font-size: 3rem;
+  }
+
+  h1{
+    font-size: 3rem;
+  }
+
+  p{
+    font-size: large;
+  }
+  

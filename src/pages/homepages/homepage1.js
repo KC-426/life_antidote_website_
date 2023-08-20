@@ -57,8 +57,9 @@ export default function homepage1() {
           data={product.slice(0, 12)}
         />
       </div>
-      {/* <TestimonialOne data={testimonialOneData} /> */}
-      {/* <TeamOne data={teamOneData} /> */}
+
+      <TestimonialOne data={testimonialOneData} />
+      <TeamOne data={teamOneData} />
       <CTAOne />
     </LayoutOne>
   );

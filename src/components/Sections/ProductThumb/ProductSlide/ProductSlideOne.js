@@ -21,7 +21,6 @@ export default function ProductSlideOne({ data }) {
   //   } catch (error) {
   //     console.log(error);
   //   }
-  // };
 
   // useEffect(() => {
   //   fetchData();

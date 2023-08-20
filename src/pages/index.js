@@ -20,6 +20,9 @@ import ProductSlider from "../components/Sections/ProductThumb/Elements/ProductS
 import { PrevArrow, NextArrow } from "../components/Other/SliderArrow";
 import SectionTitleOne from "../components/Sections/SectionTitle/SectionTitleOne";
 import Slider from "react-slick";
+import React from 'react';
+// import Counter from 'react-counter';
+import Counter from "./homepages/homepage7";
 
 export default function homepage1() {
   console.log(sliderData);
@@ -89,31 +92,36 @@ export default function homepage1() {
     ],
   };
 
-  const reviewObj  = [
+  const reviewObj = [
     {
       _id: "1",
       title: "video_1",
-      url: "https://www.youtube.com/embed/4LzEZYvyJVg"
+      name: "Ram",
+      url: "https://www.youtube.com/embed/4LzEZYvyJVg",
     },
     {
       _id: "2",
       title: "video_2",
-      url: "https://www.youtube.com/embed/naNyQAn08qo"
+      name: "Ravi",
+      url: "https://www.youtube.com/embed/naNyQAn08qo",
     },
     {
       _id: "3",
       title: "video_3",
-      url: "https://www.youtube.com/embed/62UeowWFW6A"
+      name: "Rajat",
+      url: "https://www.youtube.com/embed/62UeowWFW6A",
     },
     {
       _id: "4",
       title: "video_4",
-      url: "https://www.youtube.com/embed/5W-QigyVOvI"
+      name: "Aman",
+      url: "https://www.youtube.com/embed/5W-QigyVOvI",
     },
-     {
+    {
       _id: "5",
       title: "video_5",
-      url: "https://www.youtube.com/embed/lBzVYI_gTQI"
+      name: "Sujeet",
+      url: "https://www.youtube.com/embed/lBzVYI_gTQI",
     },
     // {
     //   _id: "6",
@@ -124,10 +132,12 @@ export default function homepage1() {
     //   _id: "7",
     //   title: "video_7",
     //   url: "https://youtu.be/TTpuv3Gsq9I"
-    // },   
-  ]
+    // },
+  ];
 
   return (
+
+
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
       <SliderTwo data={data} className="-style-1" showDots />
       {/* <IntroductionOne data={introductionOneData} /> */}
@@ -144,37 +154,45 @@ export default function homepage1() {
       </div>
 
       <div className="product-slide">
-      <div className="container">
-        <SectionTitleOne align="center" spaceBottom="50px">
-          Client Reviews
-        </SectionTitleOne>
+        <div className="container">
 
-        <div className="product-slider">
-      <Slider {...settings}>
+        
+         <div>
+      <Counter />
+    </div>
 
-        {reviewObj.map((data, index) => (
-      <div key= {data._id}>
-      
-      <iframe 
-      title={data.title}
-      width="320"
-      height="290"
-      src={data.url}
-      frameBorder="0"
-      allowFullScreen
-    ></iframe>
+          <SectionTitleOne align="center" spaceBottom="50px">
+            Client Reviews
+          </SectionTitleOne>
 
-      <div className="title">{data.title}</div>          
+          <div className="product-slider">
+            <Slider {...settings}>
+              {reviewObj.map((data, index) => (
+                <div key={data._id}>
+
+                  <div className="card">
+                    <iframe
+                      title={data.title}
+                      width="320"
+                      height="290"
+                      src={data.url}
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+
+                  <div className="title">{data.title}</div>
+                  <div className="name">Customer Name: {data.name}</div>
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
-        ))}
-      </Slider>
-    </div>
       </div>
-    </div>
 
-      {/* <TestimonialOne data={testimonialOneData} /> */}
-      {/* <TeamOne data={teamOneData} /> */}
-      {/* <CTAOne /> */}
+      <TestimonialOne data={testimonialOneData} />
+      <TeamOne data={teamOneData} />
+      <CTAOne />
     </LayoutOne>
   );
 }
