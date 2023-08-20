@@ -1,19 +1,16 @@
 import React from 'react';
-// import classNames from "classnames";
-// import { faUsersLine } from '@fortawesome/fontawesome-free/solid';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
+import {  FaUsers, FaGlobeAsia, FaShoppingBasket } from 'react-icons/fa';
+import { MdDiscount } from 'react-icons/md';
 
 const Counter = () => {
     return (
       <div>
-            {/* <ul className={`${classNames(classNames)} social-icons`}></ul> */}
+            
         <div className="main_container">
         <div className="no1">
-        {/* <FontAwesomeIcon icon={faUsersLine} /> */}
             <div className="font_data">
-              <i className="fa-solid fa-users-line"></i>
+              <h3><FaUsers /> </h3>
+              
             </div>
             <h1>21900+</h1> <br />
             <p>Happy Customers</p>
@@ -21,7 +18,7 @@ const Counter = () => {
   
           <div className="no1">
             <div className="font_data">
-              <i className="fa-solid fa-users-line"></i>
+           <h1><FaShoppingBasket /></h1>
             </div>
             <h1>326+</h1> <br />
             <p>Products</p>
@@ -29,7 +26,7 @@ const Counter = () => {
   
           <div className="no1">
             <div className="font_data">
-              <i className="fa-solid fa-users-line"></i>
+              <h1> <MdDiscount /></h1>
             </div>
             <h1>311+</h1> <br />
             <p>Brands</p>
@@ -37,7 +34,7 @@ const Counter = () => {
   
           <div className="no1">
             <div className="font_data">
-              <i className="fa-solid fa-users-line"></i>
+             <h1><FaGlobeAsia /></h1>
             </div>
             <h1>190+</h1> <br />
             <p>Countries</p>
