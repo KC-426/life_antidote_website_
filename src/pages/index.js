@@ -20,8 +20,6 @@ import ProductSlider from "../components/Sections/ProductThumb/Elements/ProductS
 import { PrevArrow, NextArrow } from "../components/Other/SliderArrow";
 import SectionTitleOne from "../components/Sections/SectionTitle/SectionTitleOne";
 import Slider from "react-slick";
-import React from 'react';
-// import Counter from 'react-counter';
 import Counter from "./homepages/homepage7";
 
 export default function homepage1() {

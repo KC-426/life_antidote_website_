@@ -87,7 +87,7 @@ export default function Navigator({ disableSubmenu, className }) {
       // }
       return (
         <li key={index}>
-          <Link href={process.env.PUBLIC_URL + item.to}>
+          <Link href={`${process.env.PUBLIC_URL}/products`}>
             <a>{item.title}</a>
           </Link>
         </li>
