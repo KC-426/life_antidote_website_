@@ -68,11 +68,11 @@ export default function IntroductionOne({ data }) {
                 {data.title.span}
               </SectionTitleOne>
               <p>{data.description}</p>
-              <Button
+              {/* <Button
                 color={data.btn.color}
                 content={data.btn.content}
                 action="#"
-              />
+              /> */}
             </div>
           </div>
         </div>
