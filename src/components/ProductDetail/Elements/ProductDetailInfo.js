@@ -74,6 +74,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
 
     try {
       const url = `${baseUrl}/api/add/enquiry`;
+      console.log(url);
       const res = await axios.post(
         url,
         {
@@ -177,7 +178,11 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
               <h3>Enquiry Form</h3>
               <form onSubmit={handleSubmit}>
                 <div className="formData">
-                  <label htmlFor="medicine" className="medicine">
+                  <label
+                    htmlFor="medicine"
+                    className="medicine"
+                    placeholder={data.name}
+                  >
                     Medicine:
                   </label>
                   <input
