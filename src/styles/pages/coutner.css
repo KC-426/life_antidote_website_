@@ -1,13 +1,14 @@
 .main_container {
     display: flex;
-    background-color: #f26460;
+    background-color: #1c97b2;
     color: white;
     justify-content: space-around;
     align-items: center;
     height: 300px;
+    margin-top: 5rem;
     margin-left: -290px;
     margin-right: -290px;
-    margin-bottom: 2rem;
+    margin-bottom: 6rem;
     padding: 0 20px; 
   }
   

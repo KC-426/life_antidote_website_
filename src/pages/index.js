@@ -191,8 +191,8 @@ export default function homepage1() {
       </div>
 
       <TestimonialOne data={testimonialOneData} />
-      <TeamOne data={teamOneData} />
-      <CTAOne />
+      {/* <TeamOne data={teamOneData} /> */}
+      {/* <CTAOne /> */}
     </LayoutOne>
   );
 }
