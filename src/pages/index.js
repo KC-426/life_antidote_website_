@@ -127,18 +127,38 @@ export default function homepage1() {
       name: "Sujeet",
       url: "https://www.youtube.com/embed/lBzVYI_gTQI",
     },
-    // {
-    //   _id: "6",
-    //   title: "video_6",
-    //   url: "https://www.youtube.com/embed/10jkhbZv26M"
-    // },
-    // {
-    //   _id: "7",
-    //   title: "video_7",
-    //   url: "https://youtu.be/TTpuv3Gsq9I"
-    // },
   ];
 
+
+  const brandObj = [
+    {
+      _id: "1",
+      title: 'img_1',
+      url: "google.com/imgres?imgurl=https%3A%2F%2Fd2jx2rerrg6sh3.cloudfront.net%2Fimage-handler%2Fpicture%2F2021%2F9%2Fshutterstock_642849679.jpg&tbnid=77ACyXlvYDL1JM&vet=12ahUKEwjAx_GM_e-AAxV6mmMGHVCrAh8QMygEegQIARA-..i&imgrefurl=https%3A%2F%2Fwww.news-medical.net%2Fhealth%2FThe-Replication-Crisis-in-Biomedicine.aspx&docid=AQQXCRG4bW9r2M&w=673&h=448&itg=1&q=medicine&ved=2ahUKEwjAx_GM_e-AAxV6mmMGHVCrAh8QMygEegQIARA-"
+    },
+    {
+      _id: "2",
+      title: 'img_2',
+      url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2csxpduxe849s.cloudfront.net%2Fmedia%2FE32629C6-9347-4F84-81FEAEF7BFA342B3%2F3501F557-CAFA-4218-930C20D1D930C78C%2FF6FF788E-26D5-4BC5-8CB92EE85A59CA4A%2FWebsiteJpg_XL-FMED_Main%2520Visual_Purple_Website.jpg&tbnid=5e6-uI-VJjnz-M&vet=12ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ..i&imgrefurl=https%3A%2F%2Fwww.frontiersin.org%2Fjournals%2Fmedicine&docid=05AWHRCJLnf6cM&w=1600&h=1000&q=medicine&ved=2ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ"
+    },
+    {
+      _id: "3",
+      title: 'img_3',
+      url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2csxpduxe849s.cloudfront.net%2Fmedia%2FE32629C6-9347-4F84-81FEAEF7BFA342B3%2F3501F557-CAFA-4218-930C20D1D930C78C%2FF6FF788E-26D5-4BC5-8CB92EE85A59CA4A%2FWebsiteJpg_XL-FMED_Main%2520Visual_Purple_Website.jpg&tbnid=5e6-uI-VJjnz-M&vet=12ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ..i&imgrefurl=https%3A%2F%2Fwww.frontiersin.org%2Fjournals%2Fmedicine&docid=05AWHRCJLnf6cM&w=1600&h=1000&q=medicine&ved=2ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ"
+    },
+    {
+      _id: "4",
+      title: 'img_4',
+      url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2csxpduxe849s.cloudfront.net%2Fmedia%2FE32629C6-9347-4F84-81FEAEF7BFA342B3%2F3501F557-CAFA-4218-930C20D1D930C78C%2FF6FF788E-26D5-4BC5-8CB92EE85A59CA4A%2FWebsiteJpg_XL-FMED_Main%2520Visual_Purple_Website.jpg&tbnid=5e6-uI-VJjnz-M&vet=12ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ..i&imgrefurl=https%3A%2F%2Fwww.frontiersin.org%2Fjournals%2Fmedicine&docid=05AWHRCJLnf6cM&w=1600&h=1000&q=medicine&ved=2ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ"
+    },
+    {
+      _id: "5",
+      title: 'img_5',
+      url: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fd2csxpduxe849s.cloudfront.net%2Fmedia%2FE32629C6-9347-4F84-81FEAEF7BFA342B3%2F3501F557-CAFA-4218-930C20D1D930C78C%2FF6FF788E-26D5-4BC5-8CB92EE85A59CA4A%2FWebsiteJpg_XL-FMED_Main%2520Visual_Purple_Website.jpg&tbnid=5e6-uI-VJjnz-M&vet=12ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ..i&imgrefurl=https%3A%2F%2Fwww.frontiersin.org%2Fjournals%2Fmedicine&docid=05AWHRCJLnf6cM&w=1600&h=1000&q=medicine&ved=2ahUKEwj67pjj-u-AAxXm5zgGHYvjBkYQMygnegUIARDHAQ"
+    }
+  ]
+
+ 
   return (
 
 
@@ -165,15 +185,22 @@ export default function homepage1() {
           Our Brands
         </SectionTitleOne>
 
-        <BrandsOne
-          data={data}
-          sliderSettings={settings}
-        />
-      </div>
-    </div>
+        <div className="product-slider">
+            <Slider {...settings}>
+              {brandObj.map((data, index) => (
+                <div key={data._id}>
 
+                  <div className="card">
+                    <img src={data.url}  width="345" height="250" ></img>
+                  </div>
 
-
+                  <div className="title">{data.title}</div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+          </div>
+          </div>
 
       <div className="product-slide">
         <div className="container">
