@@ -194,7 +194,7 @@ export default function homepage1() {
                     <img src={data.url}  width="345" height="250" ></img>
                   </div>
 
-                  <div className="title">{data.title}</div>
+                  <div className="title"> {data.title} </div>
                 </div>
               ))}
             </Slider>
