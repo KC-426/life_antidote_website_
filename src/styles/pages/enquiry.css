@@ -94,3 +94,15 @@ input, textarea{
     pointer-events: none;
   }
   
+  @media screen and (max-width: 768px) {
+    .popup-content {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    .button,
+    .close {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+}
