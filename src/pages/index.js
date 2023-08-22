@@ -21,6 +21,7 @@ import { PrevArrow, NextArrow } from "../components/Other/SliderArrow";
 import SectionTitleOne from "../components/Sections/SectionTitle/SectionTitleOne";
 import Slider from "react-slick";
 import Counter from "./homepages/homepage7";
+import BrandsOne from "../components/Sections/Brands/BrandsOne";
 
 export default function homepage1() {
   console.log(sliderData);
@@ -28,6 +29,7 @@ export default function homepage1() {
   const [data, setData] = useState([]);
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState([]);
+  const [banner, setBannner] = useState([])
 
   const fetchData = async () => {
     try {
@@ -44,6 +46,10 @@ export default function homepage1() {
       const res_prime = await axios.get(url_prime, { withCredentials: true });
       console.log(res_prime);
       setCategory(res_prime.data.all_categories);
+
+      const url_banner = `${baseUrl}/api//get/all/category`;
+      const res_banner = await axios.get(url_banner,  {withCredentials: true})
+
     } catch (err) {
       console.log(err);
     }
@@ -151,10 +157,26 @@ export default function homepage1() {
         />
       </div>
 
+
+
+      <div className="product-slide">
+      <div className="container">
+        <SectionTitleOne align="center" spaceBottom="50px">
+          Our Brands
+        </SectionTitleOne>
+
+        <BrandsOne
+          data={data}
+          sliderSettings={settings}
+        />
+      </div>
+    </div>
+
+
+
+
       <div className="product-slide">
         <div className="container">
-
-        
          <div>
       <Counter />
     </div>
