@@ -84,7 +84,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
           medicine: medicine,
           email: email,
           country: country,
-          product_detail: data?.productID,
+          product_id: data?.productID,
         },
         { withCredentials: true }
       );
