@@ -57,6 +57,12 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
   const [medicine, setMedicine] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  useEffect(() => {
+    setMedicine(data?.name);
+  }, [data?.name]);
+
+  console.log(medicine);
+  console.log(data.name);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
