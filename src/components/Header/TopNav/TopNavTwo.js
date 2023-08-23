@@ -22,7 +22,7 @@ export default function TopNavTwo({ container }) {
             <ul>
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={process.env.PUBLIC_URL + link.to}>{link.name}</a>
+                  <Link href={link.to}>{link.name}</Link>
                 </li>
               ))}
             </ul>
