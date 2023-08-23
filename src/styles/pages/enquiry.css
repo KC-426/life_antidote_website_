@@ -21,6 +21,10 @@ h3{
     text-align: center;
 }
 
+.data_name{
+ margin-bottom: -2rem;
+}
+
 .name, .message, .phone, .medicine, .email, .country{
     line-height: 35px;
 }

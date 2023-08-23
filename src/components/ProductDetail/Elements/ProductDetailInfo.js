@@ -105,7 +105,7 @@ export default function ProductDetailInfo({ data, onReviewSubmit, hideTab }) {
     <div className="product-detail__content">
       <div className="product-detail__content__header">
         <h5>{data.category}</h5>
-        <h2>{data.name}</h2>
+       <div className="data_name"> <h2>{data.name}</h2></div>
         {/* <div className="product-detail__content__header__comment-block">
           <Rate currentRate={data.rate} />
           <p>03 Reviews</p>
