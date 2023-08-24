@@ -10,17 +10,17 @@
   }
 
   .services_content {
-    padding: 4rem;
-    width: calc(38.32% - 2 * 3rem); 
+    padding: 3rem;
+    width: calc(40.32% - 2 * 3rem); 
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
   .service_image{
-   margin-left: 9rem;
+   margin-left: 7rem;
    margin-bottom: 3rem;
   }
 .header_heading_data{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-top: 5rem ;
     margin-left: 2rem;
@@ -38,9 +38,10 @@
   p{
       text-align: center;
       font-family: 'Almarai', sans-serif;
-      line-height: 25px;
+      line-height: 21px;
+      font-size: 15px;
   }
-  
+
 @media (max-width: 768px) {
     .services_content {
       width: calc(100% - 2 * 2rem);
