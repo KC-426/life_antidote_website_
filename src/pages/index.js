@@ -12,7 +12,7 @@ import testimonialOneData from "../data/testimonial/data.json";
 import TeamOne from "../components/Sections/Team/TeamOne";
 import teamOneData from "../data/team/teamOne.json";
 import CTAOne from "../components/Sections/CallToAction/CTAOne";
-import { useState } from "react";
+import { useImperativeHandle, useState } from "react";
 import { baseUrl } from "../../config";
 import axios from "axios";
 import ShopProducts from "../components/Shop/ShopProducts";
@@ -22,6 +22,7 @@ import SectionTitleOne from "../components/Sections/SectionTitle/SectionTitleOne
 import Slider from "react-slick";
 import Counter from "./homepages/homepage7";
 import BrandsOne from "../components/Sections/Brands/BrandsOne";
+import ShippingData from "./homepages/homepage8";
 
 export default function homepage1() {
   console.log(sliderData);
@@ -29,7 +30,7 @@ export default function homepage1() {
   const [data, setData] = useState([]);
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState([]);
-  const [banner, setBannner] = useState([])
+  const [banner, setBannner] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -48,8 +49,7 @@ export default function homepage1() {
       setCategory(res_prime.data.all_categories);
 
       const url_banner = `${baseUrl}/api//get/all/category`;
-      const res_banner = await axios.get(url_banner,  {withCredentials: true})
-
+      const res_banner = await axios.get(url_banner, { withCredentials: true });
     } catch (err) {
       console.log(err);
     }
@@ -129,44 +129,42 @@ export default function homepage1() {
     },
   ];
 
-
   const brandObj = [
     {
       _id: "1",
-      title: 'img_1',
-      url: "/assets/images/brands/BrandsOne/1.png"
+      title: "img_1",
+      url: "/assets/images/brands/BrandsOne/1.png",
     },
     {
       _id: "2",
-      title: 'img_2',
-      url: "/assets/images/brands/BrandsOne/2.png"
+      title: "img_2",
+      url: "/assets/images/brands/BrandsOne/2.png",
     },
     {
       _id: "3",
-      title: 'img_3',
-      url: "/assets/images/brands/BrandsOne/3.png"
+      title: "img_3",
+      url: "/assets/images/brands/BrandsOne/3.png",
     },
     {
       _id: "4",
-      title: 'img_4',
-      url: "/assets/images/brands/BrandsOne/4.png"
+      title: "img_4",
+      url: "/assets/images/brands/BrandsOne/4.png",
     },
     {
       _id: "5",
-      title: 'img_5',
-      url: "/assets/images/brands/BrandsOne/5.png"
-    }
-  ]
+      title: "img_5",
+      url: "/assets/images/brands/BrandsOne/5.png",
+    },
+  ];
 
- 
   return (
-
-
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
       <SliderTwo data={data} className="-style-1" showDots />
       {/* <IntroductionOne data={introductionOneData} /> */}
       {/* <IntroductionTwo data={introductionTwoData} /> */}
+            <div><ShippingData /></div>
       <ProductSlideOne data={category} />
+
 
       <div className="container">
         <ShopProducts
@@ -177,21 +175,18 @@ export default function homepage1() {
         />
       </div>
 
-
-
       <div className="product-slide">
-      <div className="container">
-        <SectionTitleOne align="center" spaceBottom="50px">
-          Our Brands
-        </SectionTitleOne>
+        <div className="container">
+          <SectionTitleOne align="center" spaceBottom="50px">
+            Our Brands
+          </SectionTitleOne>
 
-        <div className="product-slider">
+          <div className="product-slider">
             <Slider {...settings}>
               {brandObj.map((data, index) => (
                 <div key={data._id}>
-
                   <div className="card">
-                    <img src={data.url}  width="345" height="250" ></img>
+                    <img src={data.url} width="345" height="250"></img>
                   </div>
 
                   <div className="title">{data.title} </div>
@@ -199,14 +194,14 @@ export default function homepage1() {
               ))}
             </Slider>
           </div>
-          </div>
-          </div>
-
+        </div>
+      </div>
+    
       <div className="product-slide">
         <div className="container">
-         <div>
-      <Counter />
-    </div>
+          <div>
+            <Counter />
+          </div>
 
           <SectionTitleOne align="center" spaceBottom="50px">
             Client Reviews
@@ -216,7 +211,6 @@ export default function homepage1() {
             <Slider {...settings}>
               {reviewObj.map((data, index) => (
                 <div key={data._id}>
-
                   <div className="card">
                     <iframe
                       title={data.title}
