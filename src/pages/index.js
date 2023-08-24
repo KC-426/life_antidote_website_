@@ -23,6 +23,7 @@ import Slider from "react-slick";
 import Counter from "./homepages/homepage7";
 import BrandsOne from "../components/Sections/Brands/BrandsOne";
 import ShippingData from "./homepages/homepage8";
+import Services from "./homepages/homepage9"
 
 export default function homepage1() {
   console.log(sliderData);
@@ -163,6 +164,7 @@ export default function homepage1() {
       {/* <IntroductionOne data={introductionOneData} /> */}
       {/* <IntroductionTwo data={introductionTwoData} /> */}
             <div><ShippingData /></div>
+            <div><Services /></div>
       <ProductSlideOne data={category} />
 
 
