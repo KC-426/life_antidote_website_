@@ -50,3 +50,9 @@ p {
     font-size: larger;
     font-weight: 550;
 }
+
+@media screen and (max-width: 768px) {
+    .content_main_data {
+        width: 100%; 
+    }
+}
