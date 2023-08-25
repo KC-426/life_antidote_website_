@@ -71,7 +71,7 @@ export default function homepage1() {
 
   const settings = {
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     className: "product-slide__wrapper",
     prevArrow: <PrevArrow />,
@@ -103,6 +103,42 @@ export default function homepage1() {
       },
     ],
   };
+
+  const setting = {
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    className: "product-slide__wrapper",
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    responsive: [
+      {
+        breakpoint: 1170,
+        setting: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 992,
+        setting: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        setting: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        setting: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
 
   const reviewObj = [
     {
@@ -137,33 +173,33 @@ export default function homepage1() {
     },
   ];
 
-  const brandObj = [
-    {
-      _id: "1",
-      title: "img_1",
-      url: "/assets/images/brands/BrandsOne/1.png",
-    },
-    {
-      _id: "2",
-      title: "img_2",
-      url: "/assets/images/brands/BrandsOne/2.png",
-    },
-    {
-      _id: "3",
-      title: "img_3",
-      url: "/assets/images/brands/BrandsOne/3.png",
-    },
-    {
-      _id: "4",
-      title: "img_4",
-      url: "/assets/images/brands/BrandsOne/4.png",
-    },
-    {
-      _id: "5",
-      title: "img_5",
-      url: "/assets/images/brands/BrandsOne/5.png",
-    },
-  ];
+  // const brandObj = [
+  //   {
+  //     _id: "1",
+  //     title: "img_1",
+  //     url: "/assets/images/brands/BrandsOne/1.png",
+  //   },
+  //   {
+  //     _id: "2",
+  //     title: "img_2",
+  //     url: "/assets/images/brands/BrandsOne/2.png",
+  //   },
+  //   {
+  //     _id: "3",
+  //     title: "img_3",
+  //     url: "/assets/images/brands/BrandsOne/3.png",
+  //   },
+  //   {
+  //     _id: "4",
+  //     title: "img_4",
+  //     url: "/assets/images/brands/BrandsOne/4.png",
+  //   },
+  //   {
+  //     _id: "5",
+  //     title: "img_5",
+  //     url: "/assets/images/brands/BrandsOne/5.png",
+  //   },
+  // ];
 
   return (
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
@@ -199,7 +235,7 @@ export default function homepage1() {
               {brands?.map((data, index) => (
                 <div key={data._id}>
                   <div className="card">
-                    <img src={data?.main_category_image?.image_url} width="345" height="250"></img>
+                    <img src={data?.main_category_image?.image_url} width="210" height="200"></img>
                   </div>
 
                   <div className="title">{data?.main_category_image?.image_name} </div>
@@ -221,14 +257,14 @@ export default function homepage1() {
           </SectionTitleOne>
 
           <div className="product-slider">
-            <Slider {...settings}>
+            <Slider {...setting}>
               {reviewObj.map((data, index) => (
                 <div key={data._id}>
                   <div className="card">
                     <iframe
                       title={data.title}
                       width="320"
-                      height="290"
+                      height="260"
                       src={data.url}
                       frameBorder="0"
                       allowFullScreen
