@@ -14,6 +14,8 @@ export default function ShopProducts(props) {
     <div className="shop-products">
       {view === "grid" ? (
         <div className="shop-products__grid">
+
+        <div className="our_products_heading">Our Products</div>
           {data && (
             <div className="row">
               {data.map((item, index) => {
@@ -29,6 +31,7 @@ export default function ShopProducts(props) {
                       "five-col": fiveCol,
                     })}
                   >
+                
                     <Product data={item} />
                   </div>
                 );
