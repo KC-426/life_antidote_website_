@@ -161,8 +161,8 @@ export default function homepage1() {
   return (
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
       <SliderTwo data={data} className="-style-1" showDots />
-      {/* <IntroductionOne data={introductionOneData} /> */}
-      {/* <IntroductionTwo data={introductionTwoData} /> */}
+        <IntroductionOne data={introductionOneData} />
+       {/* <IntroductionTwo data={introductionTwoData} />  */}
             <div><ShippingData /></div>
             <div><Services /></div>
       <ProductSlideOne data={category} />
