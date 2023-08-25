@@ -21,9 +21,10 @@ import { PrevArrow, NextArrow } from "../components/Other/SliderArrow";
 import SectionTitleOne from "../components/Sections/SectionTitle/SectionTitleOne";
 import Slider from "react-slick";
 import Counter from "./homepages/homepage7";
-import BrandsOne from "../components/Sections/Brands/BrandsOne";
+// import BrandsOne from "../components/Sections/Brands/BrandsOne";
+import BrandSlideOne from "../components/Sections/BrandSlide/BrandSlideOne";
 import ShippingData from "./homepages/homepage8";
-import Services from "./homepages/homepage9"
+import Services from "./homepages/homepage9";
 
 export default function homepage1() {
   console.log(sliderData);
@@ -32,6 +33,7 @@ export default function homepage1() {
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState([]);
   const [banner, setBannner] = useState([]);
+  const [brands, setBrands] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -49,8 +51,12 @@ export default function homepage1() {
       console.log(res_prime);
       setCategory(res_prime.data.all_categories);
 
-      const url_banner = `${baseUrl}/api//get/all/category`;
+      const url_banner = `${baseUrl}/api/get/all/category`;
       const res_banner = await axios.get(url_banner, { withCredentials: true });
+
+      const url_brands = `${baseUrl}/api/get/brand`;
+      const res_brand = await axios.get(url_brands, { withCredentials: true });
+      setBrands(res_brand.data.findBrands);
     } catch (err) {
       console.log(err);
     }
@@ -61,6 +67,7 @@ export default function homepage1() {
   }, []);
   console.log(data);
   console.log(category);
+  console.log("main start", brands);
 
   const settings = {
     speed: 500,
@@ -161,12 +168,15 @@ export default function homepage1() {
   return (
     <LayoutOne title="Homepage 1" data={sliderData} className="-style-1">
       <SliderTwo data={data} className="-style-1" showDots />
-        <IntroductionOne data={introductionOneData} />
-       {/* <IntroductionTwo data={introductionTwoData} />  */}
-            <div><ShippingData /></div>
-            <div><Services /></div>
+      <IntroductionOne data={introductionOneData} />
+      {/* <IntroductionTwo data={introductionTwoData} />  */}
+      <div>
+        <ShippingData />
+      </div>
+      <div>
+        <Services />
+      </div>
       <ProductSlideOne data={category} />
-
 
       <div className="container">
         <ShopProducts
@@ -177,6 +187,7 @@ export default function homepage1() {
         />
       </div>
 
+      {/* <BrandSlideOne data={brands} /> */}
       <div className="product-slide">
         <div className="container">
           <SectionTitleOne align="center" spaceBottom="50px">
@@ -185,20 +196,20 @@ export default function homepage1() {
 
           <div className="product-slider">
             <Slider {...settings}>
-              {brandObj.map((data, index) => (
+              {brands?.map((data, index) => (
                 <div key={data._id}>
                   <div className="card">
-                    <img src={data.url} width="345" height="250"></img>
+                    <img src={data?.main_category_image?.image_url} width="345" height="250"></img>
                   </div>
 
-                  <div className="title">{data.title} </div>
+                  <div className="title">{data?.main_category_image?.image_name} </div>
                 </div>
               ))}
             </Slider>
           </div>
         </div>
       </div>
-    
+
       <div className="product-slide">
         <div className="container">
           <div>

@@ -145,13 +145,13 @@ export default function (data) {
                 >
                   <a className="product-list__thumb__image">
                     <img
-                      src={brands?.product_images[0]?.image_url}
+                      src={brands?.main_category_image[0]?.image_name}
                       alt={brands?.product_name}
                       className="img-fluid"
                     />
                   </a>
                 </Link>
-                <div className="product-name">{brands?.product_name}</div>
+                <div className="product-name">{brands?.main_category_image?.image_name}</div>
               </div>
             </div>
           ))}

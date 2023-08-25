@@ -35,10 +35,7 @@ export default function BrandsOne({ data, sliderSettings }) {
         </div>
       </div> */}
 
-
-
-
-<Slider {...sliderSettings}>
+      <Slider {...sliderSettings}>
         {data.map((data, index) => (
           <div key={index} className="product-slide__item">
             <div className={`product `}>
@@ -60,7 +57,6 @@ export default function BrandsOne({ data, sliderSettings }) {
                     />
                   </a>
                 </Link>
-               
               </div>
               <div className="product__content">
                 <div className="product__content__header">
@@ -69,11 +65,10 @@ export default function BrandsOne({ data, sliderSettings }) {
                     {data?.main_category_name?.length < 30 ? "" : "..."}
                   </h5>
                 </div>
-                <Link
-                  href={`#`}
-                  as={`#`}
-                >
-                  <a className="product-name">{data.main_category_name}</a>
+                <Link href={`#`} as={`#`}>
+                  <a className="product-name">
+                    {data?.main_category_image?.image_name}
+                  </a>
                 </Link>
                 <div className="product__content__footer">
                   {data.variation && (
